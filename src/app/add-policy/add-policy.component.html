@@ -1,0 +1,29 @@
+<!-- <form [formGroup]="policyForm" (ngSubmit)="savePolicy()">
+    <div style="border: 1px solid #ccc;margin-bottom:20px ;padding: 15px;">
+        <h3>Add New Policy Details</h3>
+            <input text="text" placeholder="Policy Name" [(ngModel)]="newPolicy.name" name="PolicyName" >
+            <input text="number" placeholder="Enter Premium" [(ngModel)]="newPolicy.premium" name="PolicyPremium">
+
+            <select name="" id="" [(ngModel)]="newPolicy.status" name="policyStatus">
+                <option value="Active">Active</option>
+                <option value="Expired">Expired</option>
+            </select>
+            <button (click)="savePolicy()">Save Policy</button>
+    </div>
+</form> -->
+<h3>Add New Policy Details</h3>
+<form [formGroup]="policyForm" (ngSubmit)="savePolicy()" >
+    <div style="border: 1px solid #ccc;margin-bottom:20px ;padding: 15px;">
+        <small *ngIf="policyForm.get('name')?.invalid && policyForm.get('name')?.touched" style="color:red">
+    Name is required (min 3 chars).
+  </small>
+            <input text="text" placeholder="Policy Name" formControlName="name" >
+            <small *ngIf="policyForm.get('name')?.invalid && policyForm.get('name')?.touched" style="color: red;">Name is required.</small>
+            <input text="number" placeholder="Enter Premium"  formControlName="premium">
+            <select name="" id=""  formControlName="status">
+                <option value="Active">Active</option>
+                <option value="Expired">Expired</option>
+            </select>
+            <button type="submit" [disabled]="policyForm.invalid">Save Policy</button>
+    </div>
+</form>

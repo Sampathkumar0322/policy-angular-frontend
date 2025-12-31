@@ -1,0 +1,21 @@
+
+<h1>Policy Management Dashboard</h1>
+<!-- <button onclick="togglePolicy()">Toogle Status</button> -->
+<div>
+  <nav class="navbar">
+    <button routerLink="/list" routerLinkActive="active-btn">View All Poilices</button>
+    <button routerLink="/add" routerLinkActive="active-btn">Add New Policy</button>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+<!-- <app-student-details (studentAdded)="onNewStudentCreated($event)"></app-student-details> -->
+<!-- <app-add-policy (policyAdded)="onNewPolicyCreated($event)"></app-add-policy> -->
+<div *ngIf="isAvailable">
+  <p>This policy is currently active.</p>
+</div>
+
+<!-- <div *ngFor="let s of student;">
+  <h3>{{s.name}}</h3>
+  <p>{{s.schoolName}}</p>
+  <div>{{s.standard}}</div>
+</div> -->

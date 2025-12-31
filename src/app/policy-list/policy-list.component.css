@@ -1,0 +1,44 @@
+.alert-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-weight: bold;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Smooth animation to slide the message from the right */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.active { background-color: #d4edda; color: #155724; }
+.expired { background-color: #f8d7da; color: #721c24; }
+
+.policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.policy-table th, .policy-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}

@@ -1,0 +1,35 @@
+
+<!-- <div *ngIf="successMessage" class="alert-success">{{successMessage}}</div>
+<div *ngFor="let p of polices ">
+  <h3>{{ p.name }}</h3>
+  <p>Status: {{ p.status }}</p>
+  <p>Premium : {{p.premium}}</p>
+  <button *ngIf="p.status === 'Expired'" (click)="renewpolicy(p)">Renew Now</button>
+  <button (click)="removePolicy(p.id)" class="btn-delete">Remove Policy</button>
+</div> -->
+<div class="container">
+  <table>
+    <thead>
+        <tr>
+          <th>Id </th>
+          <th>Policy Name</th>
+          <th>Premium </th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of polices">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.premium |currency}}</td>
+        <td>
+          <span [class]="'status-badge ' + p.status.toLowerCase()">{{p.status}}</span>
+        </td>
+        <td>
+          <button (click)="removePolicy(p.id)" class="btn-delete">Remove Policy</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
