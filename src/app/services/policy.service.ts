@@ -24,8 +24,9 @@ export class PolicyService {
   savePolicy (policy:policy):Observable<policy>{
     return this.http.post<policy>(this.apiUrl,policy);
   }
-deletePolicy(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.apiUrl}/${id}`);
+deletePolicy(id: number): Observable<any> {
+  // REMOVE the <void> part here
+  return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
 }
   updatePolicy(id:number,policy:policy):Observable<void>{
     return this.http.put<void>(`${this.apiUrl}/${id}`,policy)
